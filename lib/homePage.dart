@@ -7,40 +7,44 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.search_rounded)),
+        ],
+        backgroundColor: Colors.transparent,
+      ),
       body: Stack(
         children: [
           Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assetes/sp.jpg"), fit: BoxFit.fill)),
-            child: Container(
-              height: 150,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  SizedBox(
-                      height: 30,
-                      child: Text(
-                        "Following",
-                        style: TextStyle(fontSize: 20),
-                      )),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: SizedBox(
-                          height: 30,
-                          child: Text(
-                            "For You",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )),
-                    ),
+                    image: AssetImage("assets/sp.jpg"), fit: BoxFit.fill)),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                SizedBox(
+                    height: 30,
+                    child: Text(
+                      "Following",
+                      style: TextStyle(fontSize: 20),
+                    )),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: SizedBox(
+                        height: 30,
+                        child: Text(
+                          "For You",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
                   ),
-                ]),
-              ),
+                ),
+              ]),
             ),
           ),
           Padding(
